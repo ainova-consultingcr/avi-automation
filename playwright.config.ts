@@ -89,8 +89,7 @@ export default defineConfig({
 ],
 
  webServer: useLocalServers
-  ? undefined
-  : [
+  ? [
       {
         command: 'npx http-server . -p 5500 -c-1',
         cwd: appConfig.frontendPath,
@@ -105,5 +104,5 @@ export default defineConfig({
         reuseExistingServer: !process.env.CI,
         timeout: 60_000,
       },
-    ],
+    ] : undefined,
 });

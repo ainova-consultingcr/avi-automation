@@ -11,6 +11,7 @@ export class AskApiService {
     roomId: string | null = null
   ) {
     const response = await this.request.post('/ask', {
+        timeout: 60_000,
       data: {
         property_id: appConfig.propertyId,
         question,
