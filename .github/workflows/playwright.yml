@@ -14,8 +14,8 @@ on:
 jobs:
   automation:
     runs-on: ubuntu-latest
-  env:
-    TEST_ENV: production
+    env:
+      TEST_ENV: production
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
