@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "smoke:local": "cross-env TEST_ENV=local playwright test --project=chromium --grep \"@smoke\"",
+    "smoke:production": "cross-env TEST_ENV=production playwright test --project=chromium --grep \"@smoke\"",
+    "ci": "npm run typecheck && npm run test:api && npm run smoke:production",
     "test": "playwright test",
     "typecheck": "tsc --noEmit",
     "test:smoke": "playwright test --grep \"@smoke\"",
